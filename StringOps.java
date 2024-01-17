@@ -48,30 +48,29 @@ public class StringOps {
     public static String camelCase (String string) {
         boolean space = false;
         int i = 0;
+        String news = ""
         while (!space){
             if (string.charAt(i) < 91 && string.charAt (i) > 64){
                 char big = (char) (string.charAt(i) + 32);
-                string = string.substring(0,i) + big + string.substring(i + 1); 
+                news += big;
             }
             if (string.charAt(i) == 32){
                 space = true;
-                string = string.substring(0,i) + string.substring(i + 1); 
             }
             i ++;
         }
             for (int k = i ; k < string.length(); k ++){
                 space = false;
                 char big = (char) (string.charAt(k) - 32);   
-                string = string.substring(0,k) + big + string.substring(k + 1);   
+                news += big;   
                 while (!space){
                     k ++;
                     if (string.charAt(k) == 32){
                     space = true;
-                    string = string.substring(0,k) + string.substring(k + 1); 
                     }
                 }
             }
-    return "";
+    return news;
 }
 
     public static int[] allIndexOf (String string, char chr) {
