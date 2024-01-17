@@ -62,6 +62,9 @@ public class StringOps {
                 space = true;
             }
             i ++;
+            if (i == string.length()){
+                    break;
+                }
         }
         while (i < string.length()){
             while (string.charAt(i) != 32){
@@ -75,11 +78,8 @@ public class StringOps {
                     break;
                 }
             }
-            while(string.charAt(i) == 32){
+            while(i < string.length() && string.charAt(i) == 32){
                 i++;
-                if (i == string.length()){
-                    break;
-                }
             }
             if (i == string.length()){
                     break;
