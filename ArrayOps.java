@@ -4,9 +4,9 @@ public class ArrayOps {
     }
     
     public static int findMissingInt (int [] array) {
-        for (int k = 0 ; k <= array.length; k++){
+        for (int k = 0 ; k < array.length; k++){
             boolean check = false;
-            for (int i = 0; i <= array.length; i++){
+            for (int i = 0; i < array.length; i++){
                 if (array[i] == k){
                     check = true;
                 }
