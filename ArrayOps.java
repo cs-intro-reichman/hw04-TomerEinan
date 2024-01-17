@@ -4,9 +4,9 @@ public class ArrayOps {
     }
     
     public static int findMissingInt (int [] array) {
-        for (int k = 0 ; k < array.length; k++){
+        for (int k = 0 ; k <= array.length; k++){
             boolean check = false;
-            for (int i = 0; i < array.length; i++){
+            for (int i = 0; i <= array.length; i++){
                 if (array[i] == k){
                     check = true;
                 }
@@ -60,13 +60,10 @@ public class ArrayOps {
         }
         check = true;
         for (int i = 0; i < array.length - 1; i ++){
-            if(array[i] < array[i + 1]){
+            if(array[i] > array[i + 1]){
                 check = false;
             }
         }
-        if (check){
-            return check;
-            }
-        return false;
+        return check;
     }
 }
