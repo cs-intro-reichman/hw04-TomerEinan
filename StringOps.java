@@ -48,7 +48,7 @@ public class StringOps {
     public static String camelCase (String string) {
         boolean space = false;
         int i = 0;
-        String news = ""
+        String news = "";
         while (!space){
             if (string.charAt(i) < 91 && string.charAt (i) > 64){
                 char big = (char) (string.charAt(i) + 32);
