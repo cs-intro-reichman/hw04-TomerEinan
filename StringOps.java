@@ -66,6 +66,14 @@ public class StringOps {
                     break;
                 }
         }
+        if (i != string.length()){
+            big = (char) (string.charAt(i));
+            if (string.charAt(i) > 96){
+                big = (char) (string.charAt(i) - 32);
+                    }
+            news += big;
+            }
+        i ++;
         while (i < string.length()){
             while (string.charAt(i) != 32){
                 big = (char) (string.charAt(i));
