@@ -49,11 +49,12 @@ public class StringOps {
         boolean space = false;
         int i = 0;
         String news = "";
+        char big = 2;
         while (!space){
             if (string.charAt(i) != 32){
-                    char big = string.charAt(i);
+                    big = string.charAt(i);
                     if (string.charAt(i) < 91 && string.charAt (i) > 64){
-                        char big = (char) (string.charAt(i) + 32);
+                        big = (char) (string.charAt(i) + 32);
                     }
                     news += big;
             }
@@ -64,7 +65,7 @@ public class StringOps {
         }
             for (int k = i ; k < string.length(); k ++){
                 space = false;
-                char big = (char) (string.charAt(k) - 32);   
+                big = (char) (string.charAt(k) - 32);   
                 news += big;   
                 while (!space){
                     k ++;
