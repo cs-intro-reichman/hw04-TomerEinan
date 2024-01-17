@@ -50,6 +50,9 @@ public class StringOps {
         int i = 0;
         String news = "";
         char big = 2;
+        while(i < string.length() && string.charAt(i) == 32){
+                i++;
+            }
         while (!space){
             if (string.charAt(i) != 32){
                     big = (char) (string.charAt(i));
