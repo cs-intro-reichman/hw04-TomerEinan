@@ -63,25 +63,32 @@ public class StringOps {
             }
             i ++;
         }
-            for (int k = i ; k < string.length(); k ++){
-                space = false;
-                big = (char) (string.charAt(k));
-                if (string.charAt(k) >96){
-                big = (char) (string.charAt(k) - 32);
-                }   
-                news += big;   
-                while (!space){
-                    k ++;
-                    if (string.charAt(k) == 32){
-                    space = true;
+        while (i < string.length()){
+            while (i < string.length() && string.charAt(i) != 32){
+                big = (char) (string.charAt(i));
+                    if (string.charAt(i) < 91 && string.charAt (i) > 64){
+                        big = (char) (string.charAt(i) + 32);
                     }
-                    else {
-                        news += string.charAt(k);
+                    news += big;
+                    i++;
+            }
+            while(string.charAt(i) == 32){
+                i++;
+                if (i == string.length()){
+                    break;
                 }
             }
-        }
-    return news;
-}
+            if (i == string.length()){
+                    break;
+                }
+            big = (char) (string.charAt(i));
+            if (string.charAt(i) > 96){
+                big = (char) (string.charAt(i) - 32);
+                    }
+            news += big;
+            }
+            return news;
+    }
 
     public static int[] allIndexOf (String string, char chr) {
         int counter = 0;
