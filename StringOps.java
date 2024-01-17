@@ -54,6 +54,7 @@ public class StringOps {
                     char big = string.charAt(i);
                     if (string.charAt(i) < 91 && string.charAt (i) > 64){
                         char big = (char) (string.charAt(i) + 32);
+                    }
                     news += big;
             }
             if (string.charAt(i) == 32){
@@ -74,6 +75,7 @@ public class StringOps {
                         news += string.charAt(k);
                 }
             }
+        }
     return news;
 }
 
