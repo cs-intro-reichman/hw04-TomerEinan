@@ -26,17 +26,66 @@ public class StringOps {
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        String nstr = "";
+        for (int i = 0; i < string.length(); i++){
+            if (string.charAt(i) == 97 || string.charAt(i) == 101 || string.charAt(i) == 105 || string.charAt(i) == 111 ||
+                string.charAt(i) == 117){
+                char big = (char) (string.charAt(i) - 32);   
+                string = string.substring(0,i) + big + string.substring(i + 1);        }
+            if (string.charAt(i) < 91 && string.charAt(i) > 65){
+                if (string.charAt(i) != 69 && string.charAt(i) != 73 &&
+                 string.charAt(i) != 85)
+                {
+                    char small = (char) (string.charAt(i) + 32);
+                    string = string.substring(0,i) + small + string.substring(i + 1); 
+                }
+            }
+            nstr += string.charAt(i);
+            }
+        return nstr;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        boolean space = false;
+        int i = 0;
+        while (!space)|{
+            if (string.charAt(i) < 91 && string.charAt (i) > 64){
+                char big = (char) (string.charAt(i) + 32);
+                string = string.substring(0,i) + big + string.substring(i + 1); 
+            }
+            if (string.charAt(i) == 32){
+                space = true;
+                string = string.substring(0,i) + string.substring(i + 1); 
+            }
+            for (i ; i < string.length(); i ++){
+                space = false;
+                char big = (char) (string.charAt(i) - 32);   
+                string = string.substring(0,i) + big + string.substring(i + 1);   
+                while (!space){
+                    i ++
+                    if (string.charAt(i) == 32){
+                    space = true;
+                    string = string.substring(0,i) + string.substring(i + 1); 
+            }
     }
+    return "";
+}
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int counter = 0;
+        for (int i = 0; i < string.length; i++){
+            if(string[i] == chr){
+                counter ++;
+            }
+        }
+        array = new int [counter];
+        int j = 0;
+        for (int i = 0; i < string.length; i++){
+            if(string[i] == chr){
+                array[j] = i;
+                j++
+            }
+        }
+        return array;
     }
 }
