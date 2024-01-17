@@ -57,6 +57,8 @@ public class StringOps {
                 space = true;
                 string = string.substring(0,i) + string.substring(i + 1); 
             }
+            i ++;
+        }
             for (i ; i < string.length(); i ++){
                 space = false;
                 char big = (char) (string.charAt(i) - 32);   
@@ -66,8 +68,9 @@ public class StringOps {
                     if (string.charAt(i) == 32){
                     space = true;
                     string = string.substring(0,i) + string.substring(i + 1); 
+                    }
+                }
             }
-    }
     return "";
 }
 
