@@ -70,6 +70,8 @@ public class StringOps {
                     if (string.charAt(k) == 32){
                     space = true;
                     }
+                    else {
+                        news += string.charAt(k);
                 }
             }
     return news;
