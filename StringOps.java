@@ -59,15 +59,15 @@ public class StringOps {
             }
             i ++;
         }
-            for (i ; i < string.length(); i ++){
+            for (int k = i ; k < string.length(); k ++){
                 space = false;
-                char big = (char) (string.charAt(i) - 32);   
-                string = string.substring(0,i) + big + string.substring(i + 1);   
+                char big = (char) (string.charAt(k) - 32);   
+                string = string.substring(0,k) + big + string.substring(k + 1);   
                 while (!space){
                     i ++;
-                    if (string.charAt(i) == 32){
+                    if (string.charAt(k) == 32){
                     space = true;
-                    string = string.substring(0,i) + string.substring(i + 1); 
+                    string = string.substring(0,k) + string.substring(k + 1); 
                     }
                 }
             }
@@ -76,17 +76,17 @@ public class StringOps {
 
     public static int[] allIndexOf (String string, char chr) {
         int counter = 0;
-        for (int i = 0; i < string.length; i++){
-            if(string[i] == chr){
+        for (int i = 0; i < string.length(); i++){
+            if(string.charAt(i) == chr){
                 counter ++;
             }
         }
-        array = new int [counter];
+        int[] array = new int [counter];
         int j = 0;
-        for (int i = 0; i < string.length; i++){
-            if(string[i] == chr){
+        for (int i = 0; i < string.length(); i++){
+            if(string.charAt(i) == chr){
                 array[j] = i;
-                j++
+                j++;
             }
         }
         return array;
