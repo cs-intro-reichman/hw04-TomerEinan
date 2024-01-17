@@ -64,7 +64,7 @@ public class StringOps {
                 char big = (char) (string.charAt(k) - 32);   
                 string = string.substring(0,k) + big + string.substring(k + 1);   
                 while (!space){
-                    i ++;
+                    k ++;
                     if (string.charAt(k) == 32){
                     space = true;
                     string = string.substring(0,k) + string.substring(k + 1); 
