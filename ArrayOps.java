@@ -15,7 +15,7 @@ public class ArrayOps {
                 return k;
             }
         }
-        return -1;
+        return 1;
     }
 
     public static int secondMaxValue(int [] array) {
