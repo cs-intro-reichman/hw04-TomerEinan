@@ -66,7 +66,7 @@ public class StringOps {
                     break;
                 }
         }
-        if (i != string.length()){
+        if (i != string.length() && string.charAt(i) ! = 32){
             big = (char) (string.charAt(i));
             if (string.charAt(i) > 96){
                 big = (char) (string.charAt(i) - 32);
