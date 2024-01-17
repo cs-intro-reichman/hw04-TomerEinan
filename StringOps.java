@@ -50,9 +50,11 @@ public class StringOps {
         int i = 0;
         String news = "";
         while (!space){
-            if (string.charAt(i) < 91 && string.charAt (i) > 64){
-                char big = (char) (string.charAt(i) + 32);
-                news += big;
+            if (string.charAt(i) != 32){
+                    char big = string.charAt(i);
+                    if (string.charAt(i) < 91 && string.charAt (i) > 64){
+                        char big = (char) (string.charAt(i) + 32);
+                    news += big;
             }
             if (string.charAt(i) == 32){
                 space = true;
