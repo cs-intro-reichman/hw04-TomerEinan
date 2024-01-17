@@ -26,17 +26,100 @@ public class StringOps {
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        String nstr = "";
+        for (int i = 0; i < string.length(); i++){
+            if (string.charAt(i) == 97 || string.charAt(i) == 101 || string.charAt(i) == 105 || string.charAt(i) == 111 ||
+                string.charAt(i) == 117){
+                char big = (char) (string.charAt(i) - 32);   
+                string = string.substring(0,i) + big + string.substring(i + 1);        }
+            if (string.charAt(i) < 91 && string.charAt(i) > 65){
+                if (string.charAt(i) != 69 && string.charAt(i) != 73 && string.charAt(i) != 79&&
+                 string.charAt(i) != 85)
+                {
+                    char small = (char) (string.charAt(i) + 32);
+                    string = string.substring(0,i) + small + string.substring(i + 1); 
+                }
+            }
+            nstr += string.charAt(i);
+            }
+        return nstr;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        boolean space = false;
+        int i = 0;
+        String news = "";
+        char big = 2;
+        while(i < string.length() && string.charAt(i) == 32){
+                i++;
+            }
+        while (!space){
+            if (string.charAt(i) != 32){
+                    big = (char) (string.charAt(i));
+                    if (string.charAt(i) < 91 && string.charAt (i) > 64){
+                        big = (char) (string.charAt(i) + 32);
+                    }
+                    news += big;
+            }
+            if (string.charAt(i) == 32){
+                space = true;
+            }
+            i ++;
+            if (i == string.length()){
+                    break;
+                }
+        }
+        if (i != string.length() && string.charAt(i) != 32){
+            big = (char) (string.charAt(i));
+            if (string.charAt(i) > 96){
+                big = (char) (string.charAt(i) - 32);
+                    }
+            news += big;
+            i ++;
+            }
+        while (i < string.length()){
+            while (string.charAt(i) != 32){
+                big = (char) (string.charAt(i));
+                    if (string.charAt(i) < 91 && string.charAt (i) > 64){
+                        big = (char) (string.charAt(i) + 32);
+                    }
+                    news += big;
+                    i++;
+                    if (i == string.length()){
+                    break;
+                }
+            }
+            while(i < string.length() && string.charAt(i) == 32){
+                i++;
+            }
+            if (i == string.length()){
+                    break;
+                }
+            big = (char) (string.charAt(i));
+            if (string.charAt(i) > 96){
+                big = (char) (string.charAt(i) - 32);
+                    }
+            news += big;
+            i++;
+            }
+            return news;
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int counter = 0;
+        for (int i = 0; i < string.length(); i++){
+            if(string.charAt(i) == chr){
+                counter ++;
+            }
+        }
+        int[] array = new int [counter];
+        int j = 0;
+        for (int i = 0; i < string.length(); i++){
+            if(string.charAt(i) == chr){
+                array[j] = i;
+                j++;
+            }
+        }
+        return array;
     }
 }
