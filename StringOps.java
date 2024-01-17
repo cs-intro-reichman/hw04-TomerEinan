@@ -33,7 +33,7 @@ public class StringOps {
                 char big = (char) (string.charAt(i) - 32);   
                 string = string.substring(0,i) + big + string.substring(i + 1);        }
             if (string.charAt(i) < 91 && string.charAt(i) > 65){
-                if (string.charAt(i) != 69 && string.charAt(i) != 73 &&
+                if (string.charAt(i) != 69 && string.charAt(i) != 73 && string.charAt(i) != 79&&
                  string.charAt(i) != 85)
                 {
                     char small = (char) (string.charAt(i) + 32);
