@@ -100,6 +100,7 @@ public class StringOps {
                 big = (char) (string.charAt(i) - 32);
                     }
             news += big;
+            i++;
             }
             return news;
     }
