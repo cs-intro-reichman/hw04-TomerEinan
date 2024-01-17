@@ -64,13 +64,16 @@ public class StringOps {
             i ++;
         }
         while (i < string.length()){
-            while (i < string.length() && string.charAt(i) != 32){
+            while (string.charAt(i) != 32){
                 big = (char) (string.charAt(i));
                     if (string.charAt(i) < 91 && string.charAt (i) > 64){
                         big = (char) (string.charAt(i) + 32);
                     }
                     news += big;
                     i++;
+                    if (i == string.length()){
+                    break;
+                }
             }
             while(string.charAt(i) == 32){
                 i++;
