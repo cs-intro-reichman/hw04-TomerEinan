@@ -72,8 +72,8 @@ public class StringOps {
                 big = (char) (string.charAt(i) - 32);
                     }
             news += big;
+            i ++;
             }
-        i ++;
         while (i < string.length()){
             while (string.charAt(i) != 32){
                 big = (char) (string.charAt(i));
